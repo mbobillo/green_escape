@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'bookings/index'
+  get 'bookings/create'
   devise_for :users
   # root to: "pages#home"
   root to: "accomodations#index"
