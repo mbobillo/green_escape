@@ -8,8 +8,8 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 # db/seeds.rb
-
-users = User.create([
+User.destroy_all
+users = User.create!([
   { first_name: 'Marion', last_name: 'Bobillo', email: 'marion.bobillo@gmail.com', password: '123456' },
   { first_name: 'Amelie', last_name: 'Caron', email: 'caron.amelie94@gmail.com', password: '123456' },
   { first_name: 'Edgar', last_name: 'Meier', email: 'edgar.meier@swordagency.com', password: '123456' },
@@ -39,24 +39,17 @@ accomodations = Accomodation.create([
   }
 ])
 
-experiences = Experience.create([
-  { title: 'Kayaking Adventure', description: 'Kayak through the river', type: 'Adventure', price: 50.00 },
-  { title: 'Wine Tasting', description: 'Taste local wines', type: 'Relaxation', price: 75.00 }
-])
-
 bookings = Booking.create([
   {
     start_date: '2024-06-01',
     end_date: '2024-06-07',
     accomodation: accomodations.first,
     user: users.first,
-    experience: experiences.first
   },
   {
     start_date: '2024-07-10',
     end_date: '2024-07-15',
     accomodation: accomodations.last,
     user: users.last,
-    experience: experiences.last
   }
 ])
