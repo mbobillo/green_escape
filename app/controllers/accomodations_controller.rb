@@ -1,4 +1,6 @@
 class AccomodationsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @accomodations = Accomodation.all
   end
@@ -13,8 +15,9 @@ class AccomodationsController < ApplicationController
 
   def create
     @accomodation = Accomodation.new(accomodation_params)
+    @accomodation.user = current_user
     if @accomodation.save
-      redirect_to accomodations_path
+      redirect_to accomodation_path(@accomodation)
     else
       render :new, status: :unprocessable_entity
     end
@@ -23,6 +26,6 @@ class AccomodationsController < ApplicationController
   private
 
   def accomodation_params
-    params(:accomodation).permit(:title, :description, :price, :localisation, :images, :environment_tag, :capacity, :category, :user_id)
+    params.require(:accomodation).permit(:title, :description, :price, :localisation, :images, :environment_tag, :capacity, :category)
   end
 end
