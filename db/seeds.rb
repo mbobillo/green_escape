@@ -9,6 +9,9 @@
 #   end
 # db/seeds.rb
 User.destroy_all
+Accomodation.destroy_all
+Booking.destroy_all
+
 users = User.create!([
   { first_name: 'Marion', last_name: 'Bobillo', email: 'marion.bobillo@gmail.com', password: '123456' },
   { first_name: 'Amelie', last_name: 'Caron', email: 'caron.amelie94@gmail.com', password: '123456' },
