@@ -2,7 +2,7 @@ class AccomodationsController < ApplicationController
   def index
     @accomodations = Accomodation.all
   end
-
+  
   def new
     @accomodation = Accomodation.new
   end
@@ -28,3 +28,5 @@ class AccomodationsController < ApplicationController
   end
 
   end
+end
+
