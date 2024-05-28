@@ -1,0 +1,25 @@
+.border-bottom {
+  border-bottom: solid grey;
+  border-width: 1px;
+}
+
+.border-filters {
+  border: solid black;
+  border-width: 1px;
+  border-radius: 4px;
+  padding: 2px;
+  padding-left: 6px;
+  padding-right: 6px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.category-picto {
+  font-size: 12px;
+  text-align: center;
+}
+
+.margin-right {
+  margin-right: 5px;
+}
