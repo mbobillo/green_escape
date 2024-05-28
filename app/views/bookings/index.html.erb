@@ -1,4 +1,47 @@
-<h1>Bookings#index</h1>
-<p>Find me in app/views/bookings/index.html.erb</p>
+<%# Add missing import statement for link_to helper method
+<%# Add the following line at the top of the selected code block
+<%# require 'action_view/helpers/url_helper' %>
 
-<%=  %>
+<div class="dashboard">
+  <h2>Mon dashboard <%= link_to "Ajouter un bien", new_accomodation_path, class: "btn btn-black", style: "float: right" %></h2>
+  <div class="sections">
+    <div class="section">
+      <h5>Réservations à venir</h5>
+      <div class="cards">
+        <% @bookings.each do |booking| %>
+          <% accomodation = booking.accomodation %>
+          <div class="card">
+            <div class="cardd-header">
+              <span class="status">Confirmé</span>
+              <span class="icon"><i class="fa-solid fa-image"></i></span>
+            </div>
+            <div class="card-body">
+              <p class="name"><%= booking.user.first_name %></p>
+              <p class="dates"><%= booking.start_date.strftime('%-d %b.') %> - <%= booking.end_date.strftime('%-d %b.') %></p>
+              <p class="location"><%= accomodation.localisation %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="section">
+      <h5>Voyages à venir</h5>
+      <div class="cards">
+        <% @bookings.each do |booking| %>
+          <% accomodation = booking.accomodation %>
+          <div class="card">
+            <div class="cardd-header">
+              <span class="status">Dans 1 mois</span>
+              <span class="icon"><i class="fa-solid fa-image"></i></span>
+            </div>
+            <div class="card-body">
+              <p class="location"><%= accomodation.localisation %></p>
+              <p class="dates"><%= booking.start_date.strftime('%-d %b.') %> - <%= booking.end_date.strftime('%-d %b.') %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

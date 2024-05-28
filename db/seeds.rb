@@ -47,12 +47,12 @@ bookings = Booking.create([
     start_date: '2024-06-01',
     end_date: '2024-06-07',
     accomodation: accomodations.first,
-    user: users.first,
+    user: users.first
   },
   {
     start_date: '2024-07-10',
     end_date: '2024-07-15',
     accomodation: accomodations.last,
-    user: users.last,
+    user: users.last
   }
 ])
