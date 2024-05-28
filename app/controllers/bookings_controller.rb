@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
 
   def index
-    @bookings = Booking.current_user.all
+    @bookings = Booking.all
   end
 
   def create
