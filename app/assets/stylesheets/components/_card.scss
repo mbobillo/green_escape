@@ -1,0 +1,36 @@
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.card-title {
+  color: grey;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.img-custo {
+  object-fit: cover;
+  width: 100%;
+  max-height: 250px;
+  height: 100%;
+  margin-bottom: 1rem;
+}
+
+a, a:hover, a:focus {
+  text-decoration: none;
+  color: black;
+}
+
+.tag {
+  border-radius: 12px;
+  background-color: #83C5BE;
+  color: white;
+  font-size: 12px;
+  width: 75px;
+  height: 20px;
+  text-align: center;
+}
+

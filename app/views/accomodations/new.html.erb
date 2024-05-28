@@ -1,0 +1,54 @@
+<div class="container">
+<h1 class="m-2 p-5">Create a new accomodation</h1>
+<%= simple_form_for @accomodation do |f| %>
+    <div class="container p-5 m-2">
+      <h4>Question 1</h4>
+      <h3>Parmi les propositions suivantes, laquelle décrit le mieux votre logement ?</h3>
+      <%= f.input :category, as: :radio_buttons, collection: [['Yurte'], ['Cabin'], ['Bicoque'], ['Container']] %>
+    </div>
+
+    <div class="container p-5 m-2">
+      <h4>Question 2</h4>
+      <h3>Où est situé votre logement ?</h3>
+      <%= f.input :localisation %>
+    </div>
+
+    <div class="container p-5 m-2">
+      <h4>Question 3</h4>
+      <h3>Quel est le prix d’une nuit ?</h3>
+      <%= f.input :price %>
+    </div>
+
+    <div class="container p-5 m-2">
+      <h4>Question 4</h4>
+      <h3>Donnez un titre à votre annonce</h3>
+      <%= f.input :title %>
+    </div>
+
+    <div class="container p-5 m-2">
+      <h4>Question 5</h4>
+      <h3>Ajoutez une description</h3>
+      <%= f.input :description %>
+    </div>
+
+    <div class="container p-5 m-2">
+      <h4>Question 6</h4>
+      <h3>Quelle capacité?</h3>
+      <%= f.input :capacity %>
+    </div>
+
+    <div class="container p-5 m-2">
+      <h4>Question 7</h4>
+      <h3>environnement</h3>
+      <%= f.input :environment_tag %>
+    </div>
+
+    <div class="container p-5 m-2">
+      <%= f.input :images, as: :file %>
+    </div>
+
+    <div class="container p-5 m-2">
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+    </div>
+<% end %>
+</div>
