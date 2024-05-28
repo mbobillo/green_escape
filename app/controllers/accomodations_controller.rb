@@ -2,7 +2,7 @@ class AccomodationsController < ApplicationController
   def index
     @accomodations = Accomodation.all
   end
-  
+
   def new
     @accomodation = Accomodation.new
   end
@@ -18,15 +18,11 @@ class AccomodationsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-
   end
 
   private
-  
+
   def accomodation_params
     params(:accomodation).permit(:title, :description, :price, :localisation, :images, :environment_tag, :capacity, :category, :user_id)
   end
-
-  end
 end
-
