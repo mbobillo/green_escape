@@ -20,7 +20,9 @@
         </div>
       </div>
       <div class="show_img_wrap">
-        <img class="absolute_img" src="<%= @accomodation.images %>" alt=""/>
+        <% if @accomodation.photos.any? %>
+          <%= cl_image_tag @accomodation.photos.first.key, class: "absolute_img", alt: "Image of an accomodation" %>
+        <% end %>
       </div>
       <div class="show_description_wrap">
         <h2 class="h6">Description</h2>

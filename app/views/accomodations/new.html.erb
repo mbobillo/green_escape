@@ -10,8 +10,8 @@
     <div class="container p-5 m-2">
       <h4>Question 2</h4>
       <h3>Where is your accomodation? *</h3>
-      <%= f.input :localisation, label:false,
-      input_html: {data: {address_autocomplete_target: "localisation"}, class:"d-none"},
+      <%= f.input :localisation, label: false,
+      input_html: {data: {address_autocomplete_target: "localisation"}, class: "d-none"},
       wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}%>
 
     </div>
@@ -43,12 +43,12 @@
     <div class="container p-5 m-2">
       <h4>Question 7</h4>
       <h3>Which is the type of environment for your accomodation?</h3>
-      <%= f.input :environment_tag, as: :radio_buttons, collection: [['Mountain'], ['Coast'], ['Countryside'], ['Urban']], legend_tag: false %>
+      <%= f.input :environment_tag, as: :radio_buttons, collection: [['Mountain', '0'], ['Coast', '1'], ['Countryside', '2'], ['Urban', '3']], legend_tag: false %>
     </div>
 
     <div class="container p-5 m-2">
       <h3>Add an image</h3>
-      <%= f.input :images, as: :file, label: false %>
+      <%= f.input :photos, as: :file, label: false, input_html: { multiple: true } %>
     </div>
 
     <div class="container p-5 m-2">
