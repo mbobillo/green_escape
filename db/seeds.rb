@@ -13,10 +13,10 @@ Accomodation.destroy_all
 User.destroy_all
 
 users = User.create!([
-  { first_name: 'Marion', last_name: 'Bobillo', email: 'marion.bobill@gmail.com', password: '123456' },
-  { first_name: 'Amelie', last_name: 'Caron', email: 'caron.amelie4@gmail.com', password: '123456' },
-  { first_name: 'Edgar', last_name: 'Meier', email: 'edgar.meir@swordagency.com', password: '123456' },
-  { first_name: 'Kenzo', last_name: 'Defoy', email: 'kenzo.deoy@gmail.com', password: '123456' }
+  { first_name: 'Marion', last_name: 'Bobillo', email: 'marion.bobillo@gmail.com', password: '123456' },
+  { first_name: 'Amelie', last_name: 'Caron', email: 'caron.amelie94@gmail.com', password: '123456' },
+  { first_name: 'Edgar', last_name: 'Meier', email: 'edgar.meier@swordagency.com', password: '123456' },
+  { first_name: 'Kenzo', last_name: 'Defoy', email: 'kenzo.defoy@gmail.com', password: '123456' }
 ])
 
 accomodations = Accomodation.create([

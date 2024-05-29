@@ -11,6 +11,11 @@ class AccomodationsController < ApplicationController
 
   def show
     @accomodation = Accomodation.find(params[:id])
+    @booking = Booking.new
+  end
+
+  def activity
+
   end
 
   def create

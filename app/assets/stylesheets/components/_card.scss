@@ -2,6 +2,10 @@
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  align-items: flex-start;
+  justify-content: space-between;
+  align-content: space-between;
+  gap: 40px;
 }
 
 .card-title {
@@ -15,6 +19,7 @@
   object-fit: cover;
   width: 100%;
   max-height: 250px;
+  min-height: 250px;
   height: 100%;
   margin-bottom: 1rem;
 }
@@ -33,4 +38,3 @@ a, a:hover, a:focus {
   height: 20px;
   text-align: center;
 }
-
