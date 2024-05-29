@@ -16,7 +16,7 @@
 
 <div class="container mx-5 mt-3">
   <div class="d-flex flex-row justify-content-between">
-    <div class="d-flex flex-row justify-content-around col-6">
+    <div class="d-flex flex-row justify-content-around mb-4 col-6">
       <div class="text-center">
         <i class="fa-solid fa-campground"></i><p class="category-picto">Cabin</p>
       </div>
@@ -31,7 +31,7 @@
       </div>
     </div>
     <div>
-    </div class="col-3 text-center">
+    </div class="col-3 text-center mb-4">
       <p class="border-filters margin-right"><i class="fa-solid fa-filter"></i>Advanced filters</p>
     </div>
   </div>
@@ -39,12 +39,12 @@
 <div class="container mx-5">
   <div class= "wrapper">
     <% @accomodations.each do |a| %>
-      <div class="card m-2">
+      <div class="card" style="width: 100%">
         <%= link_to accomodation_path(a) do %>
          <img class="card-img-top img-custo" src="<%= a.images %>" alt="<%= a.title %>">
         <% end %>
         <div class="card-body">
-          <div class="d-flex flex-row justify-content-between">
+          <div class="d-flex flex-row justify-content-between mb-1">
             <p class="tag"><%= a.category %></p>
             <p><strong><%= a.price %>€</strong>/night</p>
           </div>
