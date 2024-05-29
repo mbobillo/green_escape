@@ -31,6 +31,6 @@ class AccomodationsController < ApplicationController
   private
 
   def accomodation_params
-    params.require(:accomodation).permit(:title, :description, :price, :localisation, :images, :environment_tag, :capacity, :category)
+    params.require(:accomodation).permit(:title, :description, :price, :localisation, :environment_tag, :capacity, :category, photos: [])
   end
 end
