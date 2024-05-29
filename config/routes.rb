@@ -1,19 +1,11 @@
 Rails.application.routes.draw do
-  get 'bookings/index'
-  get 'bookings/create'
   devise_for :users
-  # root to: "pages#home"
-  root to: "accomodations#index"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
-  get "up" => "rails/health#show", as: :rails_health_check
 
   resources :accomodations, only: [:index, :new, :show, :create ] do
-    resources :bookings, only: [:index, :create]
+    resources :bookings, only: [:create]
   end
 
-  # Defines the root path route ("/")
-  # root "posts#index"
+  resources :bookings, only: :index
+
+  root to: "accomodations#index"
 end
