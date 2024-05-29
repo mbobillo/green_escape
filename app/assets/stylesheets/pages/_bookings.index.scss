@@ -10,6 +10,12 @@
   margin-bottom: 30px;
 }
 
+.status {
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+}
+
 h5 {
   margin-bottom: 30px;
 }
@@ -38,10 +44,10 @@ h5 {
   margin-top: 10px;
 }
 
-.card-footer {
+.cardd-footer {
   display: flex;
+  align-items: flex-end;
   justify-content: space-between;
-  margin-top: 10px;
 }
 
 .status {

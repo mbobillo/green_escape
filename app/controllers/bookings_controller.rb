@@ -1,8 +1,9 @@
 class BookingsController < ApplicationController
   before_action :set_accommodation, only: :create
+  before_action :set_booking, only: [:accept, :decline]
 
   def index
-    @bookings = Booking.all
+    @bookings = Booking.all.ordered
   end
 
   def create
@@ -17,6 +18,33 @@ class BookingsController < ApplicationController
     end
   end
 
+  def accept
+    if @booking.update(status: 'accepted')
+      redirect_to bookings_path, notice: 'Booking was successfully accepted.'
+    else
+      redirect_to bookings_path, alert: 'Failed to accept the booking.'
+    end
+  end
+
+  def decline
+    if @booking.update(status: 'declined')
+      redirect_to bookings_path, notice: 'Booking was successfully declined.'
+    else
+      redirect_to bookings_path, alert: 'Failed to decline the booking.'
+    end
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    if @booking.destroy
+      redirect_to bookings_path, notice: 'Booking was successfully deleted.'
+    else
+      redirect_to bookings_path, alert: 'Failed to delete the booking.'
+    end
+  end
+
+
+
   private
 
   def bookings_params
@@ -25,5 +53,9 @@ class BookingsController < ApplicationController
 
   def set_accommodation
     @accomodation = Accomodation.find(params[:accomodation_id])
+  end
+
+  def set_booking
+    @booking = Booking.find(params[:id])
   end
 end
