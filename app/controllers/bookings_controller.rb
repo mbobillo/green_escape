@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  before_action :set_accommodation, only: :create
 
   def index
     @bookings = Booking.all
@@ -7,20 +8,22 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(bookings_params)
     @booking.user = current_user
-    @accomodation = accomodation_id
+    @booking.accomodation = @accomodation
+
     if @booking.save
-      redirect_to bookings_path(@booking)
+      redirect_to bookings_path
     else
-      render :new, status: :unprocessable_entity
+      render "accomodations/show", status: :unprocessable_entity
     end
   end
 
   private
+
   def bookings_params
-    params.require(:booking).permit(:start_date, :end_date, :user_id, :accomodation_id)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 
-  def accomodation_id
-    # Add your implementation here
+  def set_accommodation
+    @accomodation = Accomodation.find(params[:accomodation_id])
   end
 end

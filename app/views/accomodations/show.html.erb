@@ -27,63 +27,55 @@
         <p><%= @accomodation.description %></p>
       </div>
     </div>
-    <div class="show_hero_right">
+    <div class="show_hero_right" data-controller="price-detail" data-price-detail-price-value="<%= @accomodation.price.round %>">
       <h2 class="h5">Select a date</h2>
-      <div class="form_wrap">
-        <div class="dates_wrap">
-          <div class="date_wrap">
-            <label class="h6" for="arrival">Arrival</label>
-            <input type="date" id="arrival" name="arrival" />
+      <%= simple_form_for [@accomodation, @booking] do |f| %>
+        <div class="form_wrap">
+          <div class="dates_wrap">
+            <div class="date_wrap">
+              <%= f.input :start_date, as: :string, input_html: { data: { controller: "datepicker", price_detail_target: "startDate" } } %>
+            </div>
+            <div class="date_wrap">
+              <%= f.input :end_date, as: :string, input_html: { data: { controller: "datepicker", price_detail_target: "endDate", action: "change->price-detail#toggle" } } %>
+            </div>
           </div>
-          <div class="date_wrap">
-            <label class="h6" for="departure">Departure</label>
-            <input type="date" id="departure" name="departure" />
-          </div>
-        </div>
-        <div class="divider"></div>
-        <div class="activity_wrap">
-          <h6 class="h6">Your experiences</h6>
-          <div class="activity_card">
-            <div class="activity_card_frame">
-              <div class="activity_card_height">
-                <img
-                  class="absolute_img"
-                  src="https://images.unsplash.com/photo-1521336575822-6da63fb45455?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt=""
-                />
+          <div class="divider"></div>
+          <div class="activity_wrap">
+            <h6 class="h6">Your experiences</h6>
+            <div class="activity_card">
+              <div class="activity_card_frame">
+                <div class="activity_card_height">
+                  <img
+                    class="absolute_img"
+                    src="https://images.unsplash.com/photo-1521336575822-6da63fb45455?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="form_activity_wrap">
+                <p class="text-color-black">Lorem Ipsum</p>
+                <p>4-9 mai 2024</p>
+                <button><i class="fa-solid fa-trash"></i></button>
               </div>
             </div>
-            <div class="form_activity_wrap">
-              <p class="text-color-black">Lorem Ipsum</p>
-              <p>4-9 mai 2024</p>
-              <button><i class="fa-solid fa-trash"></i></button>
-            </div>
           </div>
-        </div>
-        <div class="divider"></div>
-        <div class="prices_wrap">
-          <h6 class="h6">Pricing details</h6>
+          <div class="divider"></div>
           <div class="prices_wrap">
-            <div class="price_line_wrap">
-              <div class="logic_price_wrap">
-                <p>70,00€</p>
-                <p>x</p>
-                <p>5 nuits</p>
+            <h6 class="h6">Pricing details</h6>
+            <div class="prices_wrap d-none" data-price-detail-target="priceWrapper">
+              <div class="price_line_wrap">
+                <div class="logic_price_wrap">
+                  <p><%= @accomodation.price.round %>€</p>
+                  <p>x</p>
+                  <p data-price-detail-target="numberOfNights"></p>
+                </div>
+                <p data-price-detail-target="total"></p>
               </div>
-              <p>350,00€</p>
-            </div>
-            <div class="price_line_wrap">
-              <p>Frais de service</p>
-              <p>23,00€</p>
-            </div>
-            <div class="price_line_wrap">
-              <p>Total</p>
-              <p>373,00€</p>
             </div>
           </div>
         </div>
-      </div>
-      <button class="button" style="margin-top: 2rem">Book a trip</button>
+        <%= f.button :submit, class: "button", style: "margin-top: 2rem" %>
+      <% end %>
     </div>
   </div>
 </div>
@@ -130,5 +122,3 @@
     </div>
   </div>
 </div>
-
-#yoyoyo
