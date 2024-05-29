@@ -3,6 +3,12 @@ class AccomodationsController < ApplicationController
 
   def index
     @accomodations = Accomodation.all
+    @markers = @accomodations.geocoded.map do |a|
+      {
+        lat: a.latitude,
+        lng: a.longitude
+      }
+    end
   end
 
   def new

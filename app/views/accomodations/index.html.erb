@@ -36,22 +36,29 @@
     </div>
   </div>
 </div>
-<div class="container mx-5">
-  <div class= "wrapper">
-    <% @accomodations.each do |a| %>
-      <div class="card" style="width: 100%">
-        <%= link_to accomodation_path(a) do %>
-         <img class="card-img-top img-custo" src="<%= a.images %>" alt="<%= a.title %>">
-        <% end %>
-        <div class="card-body">
-          <div class="d-flex flex-row justify-content-between mb-1">
-            <p class="tag"><%= a.category %></p>
-            <p><strong><%= a.price %>€</strong>/night</p>
+<div class="container">
+  <div class="container col-7 mx-5">
+    <div class= "wrapper">
+      <% @accomodations.each do |a| %>
+        <div class="card h-100" style="width: 100%">
+          <%= link_to accomodation_path(a) do %>
+          <img class="card-img-top img-custo" src="<%= a.images %>" alt="<%= a.title %>">
+          <% end %>
+          <div class="card-body">
+            <div class="d-flex flex-row justify-content-between mb-1">
+              <p class="tag"><%= a.category %></p>
+              <p><strong><%= a.price %>€</strong>/night</p>
+            </div>
+            <h5 class="card-title"><%= link_to a.title, accomodation_path(a) %></h5>
+            <p class="card-text"><%= a.description %></p>
           </div>
-          <h5 class="card-title"><%= link_to a.title, accomodation_path(a) %></h5>
-          <p class="card-text"><%= a.description %></p>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
+  <div class="container col-5 mx-5"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+ </div>
