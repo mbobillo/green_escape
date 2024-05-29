@@ -101,7 +101,8 @@ p {
   width: 100%;
   max-width: 40rem;
   padding: 2rem;
-  border: 1px solid black;
+  border: 1px solid var(--grey-2);
+  border-radius: 0.25rem;
 }
 
 .show_header {
@@ -226,7 +227,7 @@ p {
 .activity_card_img_height {
   width: 100%;
   position: relative;
-  padding-top: 50%;
+  padding-top: 70%;
 }
 
 .activity_card_info_wrap {
@@ -235,4 +236,10 @@ p {
   flex-direction: column;
   gap: 0.2.5rem;
   position: relative;
+}
+
+.activity_card_price {
+  position: absolute;
+  top: 0;
+  right: 0;
 }

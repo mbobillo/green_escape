@@ -12,6 +12,6 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: "accomodations#index"
+  root to: "pages#home"
 end
 

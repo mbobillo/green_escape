@@ -1,2 +1,26 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="home_hero_wrap">
+<div class="container">
+  <div class="home_hero_layout">
+    <h1 class="h1 text-align-center mb-6">Escape from the city<br>Green Escape</h1>
+    <div class="accomodation_wrap">
+    
+    </div>
+    <% @accomodations.each do |a| %>
+      <div class="card" style="width: 100%">
+      <%= link_to accomodation_path(a) do %>
+        <img class="card-img-top img-custo" src="<%= a.images %>" alt="<%= a.title %>">
+      <% end %>
+      <div class="card-body">
+        <div class="d-flex flex-row justify-content-between mb-1">
+          <p class="tag"><%= a.category %></p>
+          <p><strong><%= a.price %>€</strong>/night</p>
+        </div>
+        <h5 class="card-title"><%= link_to a.title, accomodation_path(a) %></h5>
+        <p class="card-text"><%= a.description %></p>
+        <p>Bookings: <%= a.bookings_count %></p>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
+</div>
