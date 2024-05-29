@@ -3,6 +3,13 @@ class AccomodationsController < ApplicationController
 
   def index
     @accomodations = Accomodation.all
+    @markers = @accomodations.geocoded.map do |a|
+      {
+        lat: a.latitude,
+        lng: a.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {a: a})
+      }
+    end
   end
 
   def new

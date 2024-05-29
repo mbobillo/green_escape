@@ -20,7 +20,7 @@
         </div>
       </div>
       <div class="show_img_wrap">
-        <% if @accomodation.photos.any? %>
+        <% if @accomodation.photos.attached? %>
           <%= cl_image_tag @accomodation.photos.first.key, class: "absolute_img", alt: "Image of an accomodation" %>
         <% end %>
       </div>

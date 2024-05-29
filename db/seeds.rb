@@ -29,6 +29,8 @@ accomodations = Accomodation.create([
     environment_tag: 'countryside',
     category: 'cabin',
     capacity: 6,
+    latitude: 52.411871,
+    longitude:-1.409066,
     user: users.first
   },
   {
@@ -40,6 +42,8 @@ accomodations = Accomodation.create([
     environment_tag: 'mountain',
     category: 'yurt',
     capacity: 4,
+    latitude: 51.958839,
+    longitude: -0.843174,
     user: users.last
   },
   {
@@ -51,7 +55,9 @@ accomodations = Accomodation.create([
     environment_tag: 'seaside',
     category: 'container',
     capacity: 5,
-    user: users.last
+    latitude: 53.648832,
+    longitude: -3.008284,
+    user: users[3]
   },
   {
     title: 'Cute tiny house',
@@ -62,7 +68,61 @@ accomodations = Accomodation.create([
     environment_tag: 'city',
     category: 'tiny house',
     capacity: 2,
-    user: users.last
+    latitude: 53.379331,
+    longitude: -1.467704,
+    user: users[2]
+  },
+  {
+    title: 'Cabin by the lake',
+    description: 'A cabin in paradise, sitting on a quiet lake for the bewt experience of your life.',
+    price: 250.00,
+    images: 'https://www.cabanesdesgrandscepages.com/wp-content/uploads/2021/06/elsacyri_coucoograndscepages_low_32.jpg',
+    localisation: '2 Stonehenge Road, Amesbury, SP4 8BN, United Kingdom',
+    environment_tag: 'seaside',
+    category: 'cabin',
+    capacity: 4,
+    latitude: 51.173553466796875,
+    longitude: -1.7970980405807495,
+    user: users.first
+  },
+  {
+    title: 'Cabin in the trees',
+    description: 'Scared of heights ? You should come experience our beautiful cabin in up the trees to change your mind !',
+    price: 190.00,
+    images: 'https://www.cabanesdesgrandschenes.com/wp-content/uploads/2015/12/CABANE-CANOPEE-COUCOO-GRANDS-CH%C3%8ANES-WEB-5.jpg',
+    localisation: 'Harnham Road, Salisbury, United Kingdom',
+    environment_tag: 'countryside',
+    category: 'cabin',
+    capacity: 2,
+    latitude: 51.0612094,
+    longitude: -1.8083641,
+    user: users[1]
+  },
+  {
+    title: 'Peaceful Cabin for big family',
+    description: 'Welcome to paradise in our amazing cabin on the Sheffield lake. No neighbours, just you and your family.',
+    price: 290.00,
+    images: 'https://www.madmoisellejulie.fr/wp-content/uploads/2020/04/cabanes-coucoo-grands-cepages.jpg',
+    localisation: 'Junction 15, M1, Loake Close, Grange Park, Northampton, NN4 5EZ, United Kingdom',
+    environment_tag: 'countryside',
+    category: 'cabin',
+    capacity: 6,
+    latitude: 52.185007,
+    longitude: -0.891778,
+    user: users[1]
+  },
+  {
+    title: 'My tiny house cottage style',
+    description: 'In a beautiful mountain, come and live in my tiny house for a couple of days to exprience respectful living.',
+    price: 190.00,
+    images: 'https://www.tinyhouse-company.fr/media/81/f1/30/1693569040/photo_2023-09-01%2014.49.39.jpeg',
+    localisation: 'The Langdale Estate, Great Langdale, Ambleside LA22 9JD, United Kingdom',
+    environment_tag: 'mountain',
+    category: 'tiny house',
+    capacity: 2,
+    latitude: 54.437412,
+    longitude: -3.041177,
+    user: users[1]
   },
 ])
 
