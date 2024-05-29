@@ -40,7 +40,9 @@
   <div class= "wrapper">
     <% @accomodations.each do |a| %>
       <div class="card m-2">
-        <img class="card-img-top img-custo" src="<%= a.images %>" alt="<%= a.title %>">
+        <%= link_to accomodation_path(a) do %>
+         <img class="card-img-top img-custo" src="<%= a.images %>" alt="<%= a.title %>">
+        <% end %>
         <div class="card-body">
           <div class="d-flex flex-row justify-content-between">
             <p class="tag"><%= a.category %></p>
@@ -53,4 +55,3 @@
     <% end %>
   </div>
 </div>
-
