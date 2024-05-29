@@ -1,1 +1,284 @@
 // Specific CSS for your home-page
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+:root {
+  --white: #fafafa;
+  --grey-1: #f2f2f2;
+  --grey-2: #cccccc;
+  --grey-3: #a5a5a5;
+  --grey-4: #7f7f7f;
+  --grey-5: #424242;
+  --black: #0c0c0c;
+}
+
+button {
+  all: unset;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Inter", sans-serif;
+}
+
+p {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+.container-show {
+  padding: 5rem 5rem;
+  max-width: 80rem;
+  width: 100%;
+}
+
+.u-grid-col-3 {
+  display: grid;
+  grid-auto-columns: minmax(0px, 1fr);
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.h1 {
+  font-size: 47px;
+}
+
+.h2 {
+  font-size: 36px;
+}
+
+.h3 {
+  font-size: 32px;
+}
+
+.h4 {
+  font-size: 27px;
+}
+
+.h5 {
+  font-size: 23px;
+}
+
+.h6 {
+  font-size: 18px;
+}
+
+.container-show {
+  max-width: 90rem;
+}
+
+.show_hero_layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.show_hero_left {
+  width: 100%;
+  max-width: 40rem;
+}
+
+.show_hero_right {
+  width: 100%;
+  max-width: 40rem;
+  padding: 2rem;
+  border: 1px solid var(--grey-2);
+  border-radius: 0.25rem;
+}
+
+.show_header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.icon_wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header_info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.show_img_wrap {
+  width: 100%;
+  height: 30rem;
+  position: relative;
+  margin: 2rem 0rem;
+}
+
+.absolute_img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+}
+
+.dates_wrap {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.form_wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--grey-2);
+}
+
+.activity_card_frame {
+  width: 5rem;
+}
+
+.activity_card_height {
+  width: 100%;
+  position: relative;
+  padding-top: 100%;
+}
+
+.activity_card {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.prices_wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.logic_price_wrap {
+  display: flex;
+  flex-direction: row;
+  gap: 0.25rem;
+}
+
+.price_line_wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button {
+  padding: 1rem 2rem;
+  background-color: var(--black);
+  color: var(--white);
+  text-align: center;
+  border-radius: 0.25rem;
+}
+
+.show_activity_layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.activity_card_item {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.activity_card_img_frame {
+  width: 100%;
+}
+
+.activity_card_img_height {
+  width: 100%;
+  position: relative;
+  padding-top: 70%;
+}
+
+.activity_card_info_wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2.5rem;
+  position: relative;
+}
+
+.activity_card_price {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+
+.text-align-center {
+  text-align: center;
+}
+
+
+.home_hero_layout {
+  padding: 5rem 0;
+}
+
+
+.border-bottom {
+  border-bottom: solid grey;
+  border-width: 1px;
+}
+
+.border-filters {
+  border: solid black;
+  border-width: 1px;
+  border-radius: 4px;
+  padding: 2px;
+  padding-left: 6px;
+  padding-right: 6px;
+  font-size: 14px;
+  max-height: 45px;
+  display: flex;
+  align-items: center;
+}
+
+.category-picto {
+  font-size: 12px;
+  text-align: center;
+}
+
+.margin-right {
+  margin-right: 5px;
+}

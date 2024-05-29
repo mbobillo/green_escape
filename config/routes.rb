@@ -7,5 +7,5 @@ Rails.application.routes.draw do
 
   resources :bookings, only: :index
 
-  root to: "accomodations#index"
+  root to: "pages#home"
 end
