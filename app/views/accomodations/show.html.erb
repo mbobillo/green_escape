@@ -1,7 +1,7 @@
 <div class="show_hero_wrap">
   <div class="container-show" style="padding-bottom: 2.5rem">
-  <div class="show_hero_layout">
-    <div class="show_hero_left">
+    <div class="show_hero_layout">
+      <div class="show_hero_left">
       <div class="show_header">
         <div class="icon_wrapper">
           <i class="fa-solid fa-location-dot"></i>
@@ -28,10 +28,10 @@
         <h2 class="h6">Description</h2>
         <p><%= @accomodation.description %></p>
       </div>
-    </div>
-    <div class="show_hero_right" data-controller="price-detail" data-price-detail-price-value="<%= @accomodation.price.round %>">
-      <h2 class="h5">Select a date</h2>
-      <%= simple_form_for [@accomodation, @booking] do |f| %>
+      </div>
+      <div class="show_hero_right" data-controller="price-detail" data-price-detail-price-value="<%= @accomodation.price.round %>">
+        <h2 class="h5">Select a date</h2>
+        <%= simple_form_for [@accomodation, @booking] do |f| %>
         <div class="form_wrap">
           <div class="dates_wrap">
             <div class="date_wrap">
@@ -77,13 +77,23 @@
           </div>
         </div>
         <%= f.button :submit, class: "button", style: "margin-top: 2rem" %>
-      <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="map_wrap">
+  <div class="container">
+    <div class="map">
+
     </div>
   </div>
 </div>
 
 <div class="show_activity_wrap">
-  <div class="container">
+  <div class="container-show">
+    <h2 class="h2 mb-3">Activities near you</h2>
     <div class="show_activity_layout">
         <div class="activity_card_item">
           <div class="activity_card_img_frame">
@@ -94,6 +104,7 @@
           <div class= "activity_card_info_wrap">
             <h3 class="h6">Yoga</h3>
             <p>9 juil - 14 juil </p>
+            <p class="activity_card_price">70€/personne</p>
           </div>
           <button class="button">Add activity</button>
         </div>
@@ -106,6 +117,7 @@
           <div class= "activity_card_info_wrap">
             <h3 class="h6">Yoga</h3>
             <p>9 juil - 14 juil </p>
+            <p class="activity_card_price">70€/personne</p>
           </div>
           <button class="button">Add activity</button>
         </div>
@@ -118,6 +130,7 @@
           <div class= "activity_card_info_wrap">
             <h3 class="h6">Yoga</h3>
             <p>9 juil - 14 juil </p>
+            <p class="activity_card_price">70€/personne</p>
           </div>
           <button class="button">Add activity</button>
         </div>

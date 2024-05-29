@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :accomodations, only: [:index, :new, :show, :create ] do
+  resources :accomodations, only: [:index, :new, :show, :create] do
     resources :bookings, only: [:create]
   end
 
-  resources :bookings, only: :index
+  resources :bookings, only: [:index, :destroy] do
+    member do
+      patch :accept
+      patch :decline
+    end
+  end
 
-  root to: "accomodations#index"
+  root to: "pages#home"
 end
+

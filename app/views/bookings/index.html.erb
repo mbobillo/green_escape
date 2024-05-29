@@ -3,7 +3,7 @@
 <%# require 'action_view/helpers/url_helper' %>
 
 <div class="dashboard">
-  <h2>Mon dashboard <%= link_to "Ajouter un bien", new_accomodation_path, class: "btn btn-black", style: "float: right" %></h2>
+  <h2>Mon dashboard</h2>
   <div class="sections">
     <div class="section">
       <h5>Réservations à venir</h5>
@@ -12,13 +12,22 @@
           <% accomodation = booking.accomodation %>
           <div class="card">
             <div class="cardd-header">
-              <span class="status">Confirmé</span>
+              <span class="status">
+                <%= button_to 'Accepter', accept_booking_path(booking), method: :patch, class: 'accept-link' %> |
+                <%= button_to 'Refuser', decline_booking_path(booking), method: :patch, class: 'decline-link' %>
+              </span>
               <span class="icon"><i class="fa-solid fa-image"></i></span>
             </div>
             <div class="card-body">
-              <p class="name"><%= booking.user.first_name %></p>
-              <p class="dates"><%= booking.start_date.strftime('%-d %b.') %> - <%= booking.end_date.strftime('%-d %b.') %></p>
-              <p class="location"><%= accomodation.localisation %></p>
+              <p class="name mt-1"><%= booking.user.first_name %></p>
+              <p class="dates mt-4"><%= booking.start_date.strftime('%-d %b.') %> - <%= booking.end_date.strftime('%-d %b.') %></p>
+              <p class="location mt-4"><%= accomodation.localisation %></p>
+              <div class="cardd-footer">
+              <p class="location mt-5 "><%= booking.status %></p>
+                <% if booking.status == 'declined' %>
+                <%= button_to 'Supprimer', booking_path(booking), method: :delete, data: { confirm: 'Êtes-vous sûr de vouloir supprimer cette réservation ?' }, class: 'delete-link btn btn-danger' %>
+                <% end %>
+              </div>
             </div>
           </div>
         <% end %>
@@ -31,12 +40,12 @@
         <% @bookings.each do |booking| %>
           <% accomodation = booking.accomodation %>
           <div class="card">
-            <div class="cardd-header">
+            <div class="cardd-header mb-1">
               <span class="status">Dans 1 mois</span>
               <span class="icon"><i class="fa-solid fa-image"></i></span>
             </div>
             <div class="card-body">
-              <p class="location"><%= accomodation.localisation %></p>
+              <p class="location mb-4"><%= accomodation.localisation %></p>
               <p class="dates"><%= booking.start_date.strftime('%-d %b.') %> - <%= booking.end_date.strftime('%-d %b.') %></p>
             </div>
           </div>
