@@ -3,48 +3,52 @@
 <%= simple_form_for @accomodation do |f| %>
     <div class="container p-5 m-2">
       <h4>Question 1</h4>
-      <h3>Parmi les propositions suivantes, laquelle décrit le mieux votre logement ?</h3>
-      <%= f.input :category, as: :radio_buttons, collection: [['Yurte'], ['Cabin'], ['Bicoque'], ['Container']] %>
+      <h3>Which of the following best describes your accommodation?</h3>
+      <%= f.input :category, as: :radio_buttons, collection: [['Yurt', '0'], ['Cabin', '1'], ['Bicoque', '2'], ['Container', '3']], legend_tag: false, input_html: { class: "type"} %>
     </div>
 
     <div class="container p-5 m-2">
       <h4>Question 2</h4>
-      <h3>Où est situé votre logement ?</h3>
-      <%= f.input :localisation %>
+      <h3>Where is your accomodation? *</h3>
+      <%= f.input :localisation, label:false,
+      input_html: {data: {address_autocomplete_target: "localisation"}, class:"d-none"},
+      wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}%>
+
     </div>
 
     <div class="container p-5 m-2">
       <h4>Question 3</h4>
-      <h3>Quel est le prix d’une nuit ?</h3>
-      <%= f.input :price %>
+      <h3>What's the price for one night? *</h3>
+      <%= f.input :price, label: false %>
     </div>
 
     <div class="container p-5 m-2">
       <h4>Question 4</h4>
-      <h3>Donnez un titre à votre annonce</h3>
-      <%= f.input :title %>
+      <h3>Give your accomodation a title *</h3>
+      <%= f.input :title, label: false%>
     </div>
 
     <div class="container p-5 m-2">
       <h4>Question 5</h4>
-      <h3>Ajoutez une description</h3>
-      <%= f.input :description %>
+      <h3>Add a description</h3>
+      <%= f.input :description, label: false %>
     </div>
 
     <div class="container p-5 m-2">
       <h4>Question 6</h4>
-      <h3>Quelle capacité?</h3>
-      <%= f.input :capacity %>
+      <h3>What's the capacity of your accomodation? *</h3>
+      <%= f.input :capacity, label: false %>
     </div>
 
     <div class="container p-5 m-2">
       <h4>Question 7</h4>
-      <h3>environnement</h3>
-      <%= f.input :environment_tag %>
+      <h3>Which is the type of environment for your accomodation?</h3>
+      <%= f.input :environment_tag, as: :radio_buttons, collection: [['Mountain'], ['Coast'], ['Countryside'], ['Urban']], legend_tag: false %>
     </div>
 
     <div class="container p-5 m-2">
-      <%= f.input :images, as: :file %>
+      <h3>Add an image</h3>
+      <%= f.input :images, as: :file, label: false %>
     </div>
 
     <div class="container p-5 m-2">
