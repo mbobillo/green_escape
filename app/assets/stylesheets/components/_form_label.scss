@@ -10,24 +10,24 @@ text-align: center;
 
 
 }
-.form-check {
-  display: inline-block;
-  margin: 1em auto;
-  width: auto;
-  // width: 50%;
+.form-control {
+font-size: 20px;;
 }
+
 
 .hidden-radio{
   position: absolute;
   transform: scale(0);
 }
 
+
 .hidden-radio + label{
   cursor: pointer;
   width: 200px;
   display: flex;
   margin:2em;
-  border: 1px solid grey;
+  border: 1px solid lightgrey;
+  border-radius: 50px;
   height: 6em;
   padding: 20px;
   flex-direction: column;
@@ -46,3 +46,41 @@ text-align: center;
 //   justify-content: space-between;
 //   gap: 16px;
 // }
+#accomodation_description {
+height: 7em;
+}
+
+.form-control {
+  border-radius: 20px;
+  border: 1px solid lightgrey;
+}
+
+
+.incrementation_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: white;
+  font-size: 30px;
+  margin: 10px;
+  text-align: center;
+}
+
+.container-incrementation {
+  border: 1px solid lightgrey;
+  border-radius: 20px;
+  height: 6em;
+  background-color: lightgrey;
+  margin-top: 2px;
+}
+
+#accomodation_capacity {
+
+  text-align: center;
+  width: 10em;
+  // margin: 0;
+}

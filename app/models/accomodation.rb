@@ -6,6 +6,6 @@ class Accomodation < ApplicationRecord
   validates :price, presence: true, numericality: { only_float: true }
   validates :capacity, presence: true, numericality: { only_integer: true }
   validates :localisation, presence: true
-  geocoded_by :address
-  after_validation :geocode, if: :will_save_change_to_address?
+  geocoded_by :localisation
+  after_validation :geocode, if: :will_save_change_to_localisation?
 end
