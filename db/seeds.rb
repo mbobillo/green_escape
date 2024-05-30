@@ -22,7 +22,7 @@ users = User.create!([
 accomodations = Accomodation.create([
   {
     title: 'Cozy Cabin',
-    description: 'A small, cozy cabin in the woods.',
+    description: 'A small, cozy cabin in the woods. Beautiful furniture and perfect comfort, in an extraordinay environment.',
     price: 200.00,
     images: 'https://images.unsplash.com/photo-1573812331441-d99117496acb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     localisation: 'Brinklow Rd, Binley, Coventry CV3 2AB, United Kingdom',
@@ -30,12 +30,12 @@ accomodations = Accomodation.create([
     category: 'cabin',
     capacity: 6,
     latitude: 52.411871,
-    longitude:-1.409066,
+    longitude: -1.409066,
     user: users.first
   },
   {
     title: 'Beautiful yurt',
-    description: 'A beautiful modern yurt in peaceful village up in the mountain.',
+    description: 'A beautiful modern yurt in peaceful village up in the mountain. We live in a resilient way in the nature, and offer you to discover this beautiful way of life',
     price: 100.00,
     images: 'https://www.glamping.com/static/media/uploads/property/Brush%20Creek%20Ranch/Brush%20Creek%20Ranch%20Yurt.jpg',
     localisation: 'Mursley Rd, Little Horwood, Milton Keynes MK17 0PH, United Kingdom',
@@ -48,7 +48,7 @@ accomodations = Accomodation.create([
   },
   {
     title: 'Peaceful container home',
-    description: 'A high-end contanier home in a vast quiet garden near the sea.',
+    description: 'A high-end contanier home in a vast quiet garden near the sea.Resilient living with minimu environmental footprint.',
     price: 180.00,
     images: 'https://images.surferseo.art/30085e36-1fe9-478f-963d-57dfc1bbfabf.webp',
     localisation: '38 The Promenade, Southport, PR8 1QU, United Kingdom',
@@ -61,7 +61,7 @@ accomodations = Accomodation.create([
   },
   {
     title: 'Cute tiny house',
-    description: 'A cocoon of love in a heavenly garden near the city.',
+    description: 'A cocoon of love in a heavenly garden near the city. An resilient living space with direct access to all services.',
     price: 110.00,
     images: 'https://images.unsplash.com/photo-1595525101922-d7febbdd796d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     localisation: '50 Arundel Gate, Sheffield, S1 2PR, United Kingdom',
@@ -74,9 +74,9 @@ accomodations = Accomodation.create([
   },
   {
     title: 'Cabin by the lake',
-    description: 'A cabin in paradise, sitting on a quiet lake for the bewt experience of your life.',
+    description: 'A cabin in paradise, sitting on a quiet lake for the best experience of your life. You can fit a family in our spacious cabin.',
     price: 250.00,
-    images: 'https://www.cabanesdesgrandscepages.com/wp-content/uploads/2021/06/elsacyri_coucoograndscepages_low_32.jpg',
+    images: 'https://media.istockphoto.com/id/1327080125/fr/photo/triangulaire-moderne-lake-house-%C3%A0-lautomne.jpg?s=1024x1024&w=is&k=20&c=shSQk40VouN-zug0RrHK1mSMDW6_FzqNjephArdRINU=',
     localisation: '2 Stonehenge Road, Amesbury, SP4 8BN, United Kingdom',
     environment_tag: 'seaside',
     category: 'cabin',
@@ -89,7 +89,7 @@ accomodations = Accomodation.create([
     title: 'Cabin in the trees',
     description: 'Scared of heights ? You should come experience our beautiful cabin in up the trees to change your mind !',
     price: 190.00,
-    images: 'https://www.cabanesdesgrandschenes.com/wp-content/uploads/2015/12/CABANE-CANOPEE-COUCOO-GRANDS-CH%C3%8ANES-WEB-5.jpg',
+    images: 'https://www.cabanes-de-france.com/wp-content/uploads/2022/07/cabanaspe2-1-scaled.jpg',
     localisation: 'Harnham Road, Salisbury, United Kingdom',
     environment_tag: 'countryside',
     category: 'cabin',
