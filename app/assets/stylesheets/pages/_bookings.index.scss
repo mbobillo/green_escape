@@ -2,19 +2,17 @@
   display: flex;
   justify-content: center;
   margin-top: 40px;
-  width: 100%; /* Définir une largeur maximale pour le conteneur */
+  width: 100%;
   max-width: 1285px;
-  margin-left: auto; /* Centrer horizontalement */
+  margin-left: auto;
   margin-right: auto;
 }
 
-/* Styles du tableau de bord */
 .dashboard {
   padding: 20px;
   font-family: Arial, sans-serif;
 }
 
-/* Styles des sections */
 .sections {
   margin-top: 50px;
 }
@@ -23,20 +21,18 @@
   margin-bottom: 30px;
 }
 
-/* Styles des en-têtes */
 h2 {
   font-size: 28px;
   margin-bottom: 20px;
-  color: #006d77; /* Vert foncé pour le contraste */
+  color: #006d77;
 }
 
 h5 {
   margin-bottom: 30px;
   font-size: 22px;
-  color: #293241; /* Bleu foncé pour le contraste */
+  color: #293241;
 }
 
-/* Styles des cartes */
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -44,7 +40,7 @@ h5 {
 }
 
 .card {
-  border: 1px solid #4f6d7a; /* Bordure bleu-vert */
+  border: 1px solid #4f6d7a;
   padding: 15px;
   border-radius: 8px;
   width: 300px;
@@ -87,19 +83,19 @@ h5 {
   margin-top: 10px;
 }
 
-/* Styles des états */
+
 .status {
   font-weight: normal;
-  color: #293241; /* Vert foncé */
+  color: #293241;
   font-size: 14px;
 }
 
 .icon {
   font-size: 15px;
-  color: #83C5BE; /* Couleur principale */
+  color: #83C5BE;
 }
 
-/* Styles des boutons */
+
 .accept-link, .decline-link, .delete-link {
   padding: 5px 10px;
   border: none;
@@ -110,22 +106,21 @@ h5 {
 }
 
 .accept-link {
-  background-color: #006d77; /* Vert foncé */
+  background-color: #006d77;
   color: white;
 }
 
 .decline-link {
-  background-color: #E63946; /* Bleu-vert */
+  background-color: #E63946;
   color: white;
 }
 
 .delete-link {
-  background-color: #E63946; /* Bleu foncé */
+  background-color: #E63946;
   color: white;
   margin-top: 25px;
 }
 
-/* Styles des images */
 .accommodation-image {
   width: 100%;
   height: auto;
@@ -133,17 +128,16 @@ h5 {
   margin-bottom: 10px;
 }
 
-/* Styles de contenu textuel supplémentaire */
 p {
   margin: 0;
   font-size: 14px;
-  color: #006d77; /* Vert foncé pour le texte */
+  color: #006d77;
 }
 
 .name {
   font-size: 16px;
   font-weight: bold;
-  color: #006d77; /* Vert foncé */
+  color: #006d77;
 }
 
 .dates, .location {
@@ -151,9 +145,9 @@ p {
 }
 
 .dates {
-  color: #006d77; /* Vert foncé */
+  color: #006d77;
 }
 
 .location {
-  color: #293241; /* Bleu-vert */
+  color: #293241;
 }
