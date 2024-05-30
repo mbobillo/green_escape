@@ -19,6 +19,17 @@ class AccomodationsController < ApplicationController
   def show
     @accomodation = Accomodation.find(params[:id])
     @booking = Booking.new
+    @experiences = @accomodation.experiences
+
+    return if @accomodation.geocoded?
+
+    @markers = [
+
+      {
+        lat: @accomodation.latitude,
+        lng: @accomodation.longitude
+      }
+    ]
   end
 
   def activity

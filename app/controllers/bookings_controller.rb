@@ -1,9 +1,11 @@
 class BookingsController < ApplicationController
-  before_action :set_accommodation, only: :create
-  before_action :set_booking, only: [:accept, :decline]
+  before_action :authenticate_user!
+  before_action :set_accomodation, only: :create
+  before_action :set_booking, only: [:accept, :decline, :destroy]
 
   def index
-    @bookings = Booking.all.ordered
+    @incoming_bookings = Booking.joins(:accomodation).where(accomodations: { user_id: current_user.id }).where('bookings.start_date >= ?', Date.today).order(:start_date)
+    @outgoing_bookings = current_user.bookings.where('start_date >= ?', Date.today).order(:start_date)
   end
 
   def create
@@ -35,7 +37,6 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    @booking = Booking.find(params[:id])
     if @booking.destroy
       redirect_to bookings_path, notice: 'Booking was successfully deleted.'
     else
@@ -43,15 +44,13 @@ class BookingsController < ApplicationController
     end
   end
 
-
-
   private
 
   def bookings_params
     params.require(:booking).permit(:start_date, :end_date)
   end
 
-  def set_accommodation
+  def set_accomodation
     @accomodation = Accomodation.find(params[:accomodation_id])
   end
 
