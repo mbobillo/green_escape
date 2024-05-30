@@ -29,3 +29,5 @@ pin "bootstrap", to: "https://ga.jspm.io/npm:bootstrap@5.2.3/dist/js/bootstrap.e
 pin "@popperjs/core", to: "https://unpkg.com/@popperjs/core@2.11.2/dist/esm/index.js"
 pin "flatpickr" # @4.6.13
 
+pin "dropzone", to: "https://ga.jspm.io/npm:dropzone@6.0.0-beta.2/dist/dropzone.mjs"
+pin "just-extend", to: "https://ga.jspm.io/npm:just-extend@5.1.1/index.esm.js"
