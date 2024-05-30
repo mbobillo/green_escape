@@ -53,7 +53,7 @@
         <h3>What's the capacity ? *</h3>
           <div class="d-flex container-incrementation justify-content-center align-items-center" data-controller="capacity-incrementation">
          <button type="button" class="incrementation_button" data-action="click->capacity-incrementation#decrement">-</button>
-          <%= f.input :capacity, wrapper_html: { class: "mb-0-important" }, input_html: { value: 0, 'data-capacity-incrementation-target': 'capacity', readonly: true, class:"increment"}, label: false  %>
+          <%= f.input :capacity, wrapper_html: { class: "mb-0-important" }, input_html: { value: 1, 'data-capacity-incrementation-target': 'capacity', readonly: true, class:"increment"}, label: false  %>
         <button type="button" class="incrementation_button" data-action="click->capacity-incrementation#increment">+</button>
       </div>
   </div>
@@ -77,7 +77,13 @@
 
     <div class="container p-5 m-2">
     <h3>Add images</h3>
-    <%= f.input :photos, as: :file, wrapper_html: { class: "drag-drop" },input_html: { multiple: true}, label: false %>
+        Cliquer ou drag and drop pour ajouter des images
+
+      <div class="drag-drop" data-controller="dropzone" data-action="click->dropzone#chooseFile">
+        <%= f.input :photos, as: :file, input_html: { multiple: true, data: { dropzone_target: "fileInput" } }, label: false %>
+        <div data-dropzone-target="preview"></div>
+
+      </div>
     </div>
 
 
