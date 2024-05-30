@@ -11,12 +11,85 @@
 Booking.destroy_all
 Accomodation.destroy_all
 User.destroy_all
+Experience.destroy_all
 
 users = User.create!([
   { first_name: 'Marion', last_name: 'Bobillo', email: 'marion.bobillo@gmail.com', password: '123456' },
   { first_name: 'Amelie', last_name: 'Caron', email: 'caron.amelie94@gmail.com', password: '123456' },
   { first_name: 'Edgar', last_name: 'Meier', email: 'edgar.meier@swordagency.com', password: '123456' },
   { first_name: 'Kenzo', last_name: 'Defoy', email: 'kenzo.defoy@gmail.com', password: '123456' }
+])
+
+experiences = Experience.create([
+  {
+    title: "Rafting",
+    description: "Experience the thrill of navigating through white water rapids with our exhilarating rafting adventures. Perfect for adrenaline seekers and nature lovers alike.",
+    kind: "Sport",
+    price: 150.00,
+    image_url: "https://images.unsplash.com/photo-1629248457649-b082812aea6c?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    title: "Kayak",
+    description: "Glide across serene waters in a canoe, exploring hidden coves and enjoying the peaceful surroundings. Ideal for those looking to unwind and connect with nature.",
+    kind: "Sport",
+    price: 150.00,
+    image_url: "https://images.unsplash.com/photo-1521336575822-6da63fb45455?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    title: "Permaculture",
+    description: "Discover sustainable living practices with our permaculture workshops. Learn how to create self-sufficient ecosystems that benefit both the environment and your lifestyle.",
+    kind: "Science",
+    price: 80.00,
+    image_url: "https://images.unsplash.com/photo-1570142071296-d5903a62ab62?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    title: "Climbing",
+    description: "Challenge yourself with our climbing activities, suitable for all levels. Scale natural rock formations and enjoy breathtaking views from the top.",
+    kind: "Sport",
+    price: 70.00,
+    image_url: "https://images.unsplash.com/photo-1586627161720-ee2849303aee?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    title: "Horse Riding",
+    description: "Embark on scenic trails and experience the joy of horse riding. Whether you're a beginner or an experienced rider, our guided tours offer something for everyone.",
+    kind: "Experience",
+    price: 100.00,
+    image_url: "https://images.unsplash.com/photo-1600757490188-1eb2bab4cf4a?q=80&w=2959&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    title: "Speleology",
+    description: "Explore the fascinating underground world with our potholing expeditions. Navigate through caves and discover the beauty hidden beneath the surface.",
+    kind: "Experience",
+    price: 60.00,
+    image_url: "https://images.unsplash.com/photo-1656843799293-371c4e28d19b?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    title: "Natural Wine Testing",
+    description: "Savor the unique flavors of natural wines with our guided tasting sessions. Learn about organic winemaking processes and enjoy a delightful sensory experience.",
+    price: 80.00,
+    image_url: "https://images.unsplash.com/photo-1519092796169-bb9cc75a4b68?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    title: "Wood Crafting",
+    description: "Unleash your creativity with our wood crafting workshops. Learn traditional techniques and create beautiful, handmade wooden items to take home.",
+    kind: "Kraftmanship",
+    price: 75.00,
+    image_url: "https://images.unsplash.com/photo-1590880795696-20c7dfadacde?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    title: "Baking Mastercall",
+    description: "Join our baking masterclass and refine your skills in the kitchen. From artisan breads to delectable pastries, learn the secrets of expert bakers.",
+    kind: "Cooking",
+    price: 150.00,
+    image_url: "https://images.unsplash.com/photo-1576186726580-a816e8b12896?q=80&w=3164&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    title: "Farm Lifestyle",
+    description: "Immerse yourself in the daily activities of farm life. From feeding animals to growing crops, experience the joys and challenges of sustainable farming.",
+    kind: "Experience",
+    price: 100.00,
+    image_url: "https://images.unsplash.com/photo-1444858291040-58f756a3bdd6?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  }
 ])
 
 accomodations = Accomodation.create([
@@ -126,17 +199,52 @@ accomodations = Accomodation.create([
   },
 ])
 
-bookings = Booking.create([
+AccomodationExperience.create([
   {
-    start_date: '2024-06-01',
-    end_date: '2024-06-07',
-    accomodation: accomodations.first,
-    user: users.first
+    accomodation: accomodations[0],
+    experience: experiences[0]
   },
   {
-    start_date: '2024-07-10',
-    end_date: '2024-07-15',
-    accomodation: accomodations.last,
-    user: users.last
+    accomodation: accomodations[1],
+    experience: experiences[1]
+  },
+  {
+    accomodation: accomodations[2],
+    experience: experiences[2]
+  },
+  {
+    accomodation: accomodations[3],
+    experience: experiences[3]
+  },
+  {
+    accomodation: accomodations[4],
+    experience: experiences[4]
+  },
+  {
+    accomodation: accomodations[5],
+    experience: experiences[5]
+  },
+  {
+    accomodation: accomodations[6],
+    experience: experiences[6]
+  },
+  {
+    accomodation: accomodations[7],
+    experience: experiences[7]
   }
 ])
+
+# bookings = Booking.create([
+#   {
+#     start_date: '2024-06-01',
+#     end_date: '2024-06-07',
+#     accomodation: accomodations.first,
+#     user: users.first
+#   },
+#   {
+#     start_date: '2024-07-10',
+#     end_date: '2024-07-15',
+#     accomodation: accomodations.last,
+#     user: users.last
+#   }
+# ])
