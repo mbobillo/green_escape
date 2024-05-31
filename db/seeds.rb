@@ -104,7 +104,7 @@ accomodations = Accomodation.create([
     capacity: 6,
     latitude: 52.411871,
     longitude: -1.409066,
-    user: users.first
+    user: users.last
   },
   {
     title: 'Beautiful yurt',
@@ -251,6 +251,6 @@ bookings = Booking.create([
     start_date: '2024-08-10',
     end_date: '2024-08-15',
     accomodation: accomodations.sample,
-    user: users[1]
+    user: users[2]
   }
 ])

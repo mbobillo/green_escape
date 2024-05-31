@@ -1,4 +1,4 @@
-<div class="page_wrap" data-controller="price-detail" data-price-detail-price-value="<%= @accomodation.price.round %>" data-price-detail-capacity-value="<%= @accomodation.capacity %>" data-price-detail-activity-price-value="<%= Experience.first.price.round %>">
+<div class="page_wrap" data-controller="price-detail" data-price-detail-price-value="<%= @accomodation.price.round %>" data-price-detail-capacity-value="<%= @accomodation.capacity %>" data-price-detail-activity-price-value="<%= @accomodation.experiences&.first&.price&.round %>" >
 
   <div class="show_hero_wrap">
   <div class="container-show" style="padding-bottom: 2.5rem">
@@ -99,7 +99,7 @@
                 <div class="price_line_left">
                   <p class="text-weight-medium">Price per activity</p>
                   <div class="logic_price_wrap">
-                    <p><%= Experience.first.price.round %>€</p>
+                    <p><%= @accomodation.experiences&.first&.price&.round %>€</p>
                     <p>x</p>
                     <p> <%= @accomodation.capacity %> </p>
                   </div>
@@ -132,27 +132,29 @@
   </div>
   </div>
 
-  <div class="show_activity_wrap">
-  <div class="container-show">
-    <h2 class="h2 mb-5">Activity near this accomodation</h2>
-    <div class="show_activity_layout">
-        <% @experiences.each do |e| %>
-          <div class="activity_card_item">
-            <div class="activity_card_img_frame">
-              <div class="activity_card_img_height">
-                <img class="absolute_img" src="<%= e.image_url %>">
-                <div class="activity_img_tag"><%= e.kind %></div>
+  <% if @experiences.any? %>
+    <div class="show_activity_wrap">
+      <div class="container-show">
+        <h2 class="h2 mb-5">Activity near this accomodation</h2>
+        <div class="show_activity_layout">
+            <% @experiences.each do |e| %>
+              <div class="activity_card_item">
+                <div class="activity_card_img_frame">
+                  <div class="activity_card_img_height">
+                    <img class="absolute_img" src="<%= e.image_url %>">
+                    <div class="activity_img_tag"><%= e.kind %></div>
+                  </div>
+                </div>
+                <div class= "activity_card_info_wrap">
+                  <h3 class="h6"><%= e.title %></h3>
+                  <p class= "text-style-two-lines"> <%= e.description %></p>
+                  <p class="activity_card_price"> <%= e.price.round %>€/personne</p>
+                </div>
+                <button class="button" data-action="click->price-detail#toggleActivity" data-price-detail-price-param= <%= e.price.round %>>Add activity to booking</button>
               </div>
-            </div>
-            <div class= "activity_card_info_wrap">
-              <h3 class="h6"><%= e.title %></h3>
-              <p class= "text-style-two-lines"> <%= e.description %></p>
-              <p class="activity_card_price"> <%= e.price.round %>€/personne</p>
-            </div>
-            <button class="button" data-action="click->price-detail#toggleActivity" data-price-detail-price-param= <%= e.price.round %>>Add activity to booking</button>
-          </div>
-        <% end %>
+            <% end %>
+        </div>
+      </div>
     </div>
-  </div>
-  </div>
+  <% end %>
 </div>
