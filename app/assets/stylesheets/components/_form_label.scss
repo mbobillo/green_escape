@@ -26,7 +26,7 @@ font-size: 20px;;
   width: 200px;
   display: flex;
   margin:2em;
-  border: 1px solid lightgrey;
+  border: 1px solid #83C5BE;
   border-radius: 50px;
   height: 6em;
   padding: 20px;
@@ -38,7 +38,7 @@ font-size: 20px;;
 }
 
 .hidden-radio:checked + label{
-  border:3px solid black;
+  border:3px solid #83C5BE;
 }
 // .radio_buttons_wrap{
 //   width:100%;
@@ -52,7 +52,7 @@ height: 7em;
 
 .form-control {
   border-radius: 20px;
-  border: 1px solid lightgrey;
+  border: 1px solid #83C5BE;
 }
 
 
@@ -74,7 +74,7 @@ height: 7em;
   border: 1px solid lightgrey;
   border-radius: 20px;
   height: 6em;
-  background-color: lightgrey;
+  background-color: #83C5BE;
   margin-top: 2px;
 }
 
@@ -83,4 +83,14 @@ height: 7em;
   text-align: center;
   width: 10em;
   // margin: 0;
+}
+
+.question-title {
+  color:#83C5BE;
+}
+
+.banner-title {
+  background-color: #83C5BE;
+  max-width: none;
+  // width: 100vw;
 }
