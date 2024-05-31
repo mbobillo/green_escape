@@ -13,6 +13,7 @@
 
 button {
   all: unset;
+  cursor: pointer;
 }
 
 * {
@@ -263,4 +264,15 @@ p {
   font-size: 0.75rem;
   background-color: var(--white);
   color: var(--black);
+}
+
+.price_line_left {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+
+.text-weight-medium {
+  font-weight: 500;
 }
