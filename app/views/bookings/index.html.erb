@@ -13,7 +13,7 @@
         <div class="cardds">
           <% @incoming_bookings.each do |booking| %>
             <% accomodation = booking.accomodation %>
-            <% if current_user != accomodation.user %>
+
               <div class="cardd">
                 <div class="cardd-header">
                   <span class="status-buttons">
@@ -37,7 +37,7 @@
                   </div>
                 </div>
               </div>
-            <% end %>
+
           <% end %>
         </div>
       </div>
