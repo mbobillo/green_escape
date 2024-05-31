@@ -1,0 +1,10 @@
+class CreateAccomodationExperiences < ActiveRecord::Migration[7.1]
+  def change
+    create_table :accomodation_experiences do |t|
+      t.references :accomodation, null: false, foreign_key: true
+      t.references :experience, null: false, foreign_key: true
+
+      t.timestamps
+    end
+  end
+end

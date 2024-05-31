@@ -1,0 +1,70 @@
+.drag-drop {
+  padding: 4px;
+  margin: 10px auto;
+  height:300px;
+  border-radius: 15px;
+  // display: flex;
+  border: 3px dotted #83C5BE;
+  // justify-content: center;
+  .preview-image {
+    height: 150px;
+    width: 150px;
+    margin: 10px auto;
+    padding: 15px;
+    display: inline;
+
+
+
+  }
+  #accomodation_photos {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    // display: none;
+    margin: 40px auto;
+  }
+}
+
+
+// .drop-drop {
+//   border: 2px dashed #ccc;
+//   padding: 20px;
+//   text-align: center;
+//   cursor: pointer;
+// }
+
+// .drop-drop.drag-over {
+//   border-color: #000;
+// }
+
+// .file-input {
+//   display: none;
+// }
+
+// .preview {
+//   margin-top: 20px;
+// }
+
+// .preview-item {
+//   display: inline-block;
+//   position: relative;
+//   margin-right: 10px;
+//   margin-bottom: 10px;
+// }
+
+// .preview-image {
+//   max-width: 100px;
+//   display: block;
+// }
+
+// .delete-button {
+//   position: absolute;
+//   top: 5px;
+//   right: 5px;
+//   background: red;
+//   color: white;
+//   border: none;
+//   border-radius: 50%;
+//   cursor: pointer;
+// }
