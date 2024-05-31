@@ -1,48 +1,53 @@
 <%# Add missing import statement for link_to helper method
 <%# Add the following line at the top of the selected code block
 <%# require 'action_view/helpers/url_helper' %>
+<%# Add missing import statement for link_to helper method
+<%# Add the following line at the top of the selected code block
+<%# require 'action_view/helpers/url_helper' %>
 <div class="containerr">
   <div class="dashboard">
     <h2>Mon dashboard</h2>
     <div class="sections">
       <div class="section">
         <h5>Réservations à venir</h5>
-        <div class="cards">
+        <div class="cardds">
           <% @incoming_bookings.each do |booking| %>
             <% accomodation = booking.accomodation %>
-            <div class="card">
-              <div class="cardd-header">
-                <span class="status-buttons">
-                  <%= button_to 'Accepter', accept_booking_path(booking), method: :patch, class: 'accept-link' %>
-                  <%= button_to 'Refuser', decline_booking_path(booking), method: :patch, class: 'decline-link' %>
-                </span>
-                <span class="icon"><i class="fa-solid fa-calendar-plus"></i></span>
-              </div>
-              <div class="card-body">
-                <% if accomodation.images.present? %>
-                  <img src="<%= accomodation.images %>" alt="<%= accomodation.title %>" class="accommodation-image" />
-                <% end %>
-                <p class="name mt-1"><%= accomodation.user.first_name %></p>
-                <p class="dates mt-4"><%= booking.start_date.strftime('%-d %b.') %> - <%= booking.end_date.strftime('%-d %b.') %></p>
-                <p class="location mt-4"><%= accomodation.localisation %></p>
-                <div class="cardd-footer">
-                  <p class="status mt-4"><%= booking.status %></p>
-                  <% if booking.status == 'declined' %>
-                    <%= button_to 'Supprimer', booking_path(booking), method: :delete, data: { confirm: 'Êtes-vous sûr de vouloir supprimer cette réservation ?' }, class: 'delete-link btn btn-danger' %>
+            <% if current_user != accomodation.user %>
+              <div class="cardd">
+                <div class="cardd-header">
+                  <span class="status-buttons">
+                    <%= button_to 'Accepter', accept_booking_path(booking), method: :patch, class: 'accept-link' %>
+                    <%= button_to 'Refuser', decline_booking_path(booking), method: :patch, class: 'decline-link' %>
+                  </span>
+                  <span class="icon"><i class="fa-solid fa-calendar-plus"></i></span>
+                </div>
+                <div class="cardd-body">
+                  <% if accomodation.images.present? %>
+                    <img src="<%= accomodation.images %>" alt="<%= accomodation.title %>" class="accommodation-image" />
                   <% end %>
+                  <p class="name mt-1"><%= accomodation.user.first_name %></p>
+                  <p class="dates mt-4"><%= booking.start_date.strftime('%-d %b.') %> - <%= booking.end_date.strftime('%-d %b.') %></p>
+                  <p class="location mt-4"><%= accomodation.localisation %></p>
+                  <div class="cardd-footer">
+                    <p class="status mt-4"><%= booking.status %></p>
+                    <% if booking.status == 'declined' %>
+                      <%= button_to 'Supprimer', booking_path(booking), method: :delete, data: { confirm: 'Êtes-vous sûr de vouloir supprimer cette réservation ?' }, class: 'delete-link btn btn-danger' %>
+                    <% end %>
+                  </div>
                 </div>
               </div>
-            </div>
+            <% end %>
           <% end %>
         </div>
       </div>
 
       <div class="section">
         <h5 class= "mt-5">Voyages à venir</h5>
-        <div class="cards">
+        <div class="cardds">
           <% @outgoing_bookings.each do |booking| %>
             <% accomodation = booking.accomodation %>
-            <div class="card">
+            <div class="cardd">
               <div class="cardd-header mb-1">
                 <%
                   days_remaining = (booking.start_date.to_date - Date.today).to_i
@@ -59,7 +64,7 @@
                 <span class="status"><%= status_message %></span>
                 <span class="icon"><i class="fa-solid fa-suitcase"></i></span>
               </div>
-              <div class="card-body">
+              <div class="cardd-body">
                 <% if accomodation.images.present? %>
                   <img src="<%= accomodation.images %>" alt="<%= accomodation.title %>" class="accommodation-image" />
                 <% end %>

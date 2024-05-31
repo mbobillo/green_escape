@@ -33,15 +33,15 @@ h5 {
   color: #293241;
 }
 
-.cards {
+.cardds {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
 }
 
-.card {
+.cardd {
   border: 1px solid #4f6d7a;
-  padding: 15px;
+  padding: 20px;
   border-radius: 8px;
   width: 300px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -61,18 +61,18 @@ h5 {
   gap: 5px;
 }
 
-.card-body {
+.cardd-body {
   display: flex;
   flex-direction: column;
 }
 
-.card-content {
+.cardd-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.card-text {
+.cardd-text {
   flex: 1;
 }
 
@@ -125,7 +125,7 @@ h5 {
   width: 100%;
   height: auto;
   border-radius: 5px;
-  margin-bottom: 10px;
+  margin: 12px 0 12px 0;
 }
 
 p {
@@ -150,4 +150,18 @@ p {
 
 .location {
   color: #293241;
+}
+
+.alert {
+  border-radius: 8px;
+}
+
+.alert-info {
+  background-color: #83C5BE;
+  color: white;
+}
+
+.alert-warning {
+  background-color: #E63946;
+  color: white;
 }

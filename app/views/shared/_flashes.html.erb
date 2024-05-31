@@ -5,7 +5,11 @@
   </div>
 <% end %>
 <% if alert %>
-  <div class="alert alert-warning alert-dismissible fade show m-1" role="alert">
+  <% if session[:alert_kind] == 'decline' %>
+    <div class="alert alert-danger alert-dismissible fade show m-1" role="alert">
+  <% else %>
+    <div class="alert alert-warning alert-dismissible fade show m-1" role="alert">
+  <% end %>
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     <%= alert %>
   </div>
