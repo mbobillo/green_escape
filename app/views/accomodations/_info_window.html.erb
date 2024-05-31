@@ -1,2 +1,6 @@
-<h6><%= a.title %></h6>
+
+<%= link_to "/accomodations/#{a.id}" do %>
+  <img class = "img-window" src="<%= a.images %>" alt="<%= a.title %>">
+<% end %>
+<p><%= link_to a.title, "/accomodations/#{a.id}" %></p>
 <p><b><%= a.price %>€</b></p>

@@ -12,19 +12,19 @@
     <div class = "mx-5 col-6 d-flex flex-row justify-content-around">
       <div class ="text-center">
         <%= radio_button_tag :category, "cabin", data: { action:"change->category-filter#submit" } %>
-        <i class="fa-solid fa-campground"></i><%= label_tag :cabin_category, "Cabin", style:"font-size: 14px;" %>
+        <i class="fa-solid fa-campground mx-1"></i><%= label_tag :cabin_category, "Cabin", style:"font-size: 14px;" %>
       </div>
       <div class ="text-center">
         <%= radio_button_tag :yurt_category, "yurt", data: { action:"change->category-filter#submit" } %>
-        <i class ="fa-solid fa-tent"></i><%= label_tag :yurt_category, "Yurt", style:"font-size: 14px;" %>
+        <i class ="fa-solid fa-tent mx-1"></i><%= label_tag :yurt_category, "Yurt", style:"font-size: 14px;" %>
       </div>
       <div class = "text-center">
         <%= radio_button_tag :category, "container", data: { action:"change->category-filter#submit" } %>
-        <i class = "fa-solid fa-box" ></i><%= label_tag :container_category, "Container", style:"font-size: 14px;" %>
+        <i class = "fa-solid fa-box mx-1" ></i><%= label_tag :container_category, "Container", style:"font-size: 14px;" %>
       </div>
       <div class = "text-center">
         <%= radio_button_tag :category, "tiny house", data: { action:"change->category-filter#submit" } %>
-        <i class = "fa-solid fa-house" ></i><%= label_tag :tiny_category, "Tiny house", style:"font-size: 14px;" %>
+        <i class = "fa-solid fa-house mx-1" ></i><%= label_tag :tiny_category, "Tiny house", style:"font-size: 14px;" %>
       </div>
     </div>
   </div>

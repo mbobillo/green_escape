@@ -25,7 +25,7 @@
       <h4 class="question-title">Question 3</h4>
       <h3>Which of the following best describes your accommodation?</h3>
         <div class="type d-flex">
-      <% [['Yurt', '0', 'fa-tent'], ['Cabin', '1', 'fa-campground'], ['Tiny House', '2', 'fa-house'], ['Container', '3', 'fa-box']].each do |label, value, icon_class| %>
+      <% [['Yurt', 'yurt', 'fa-tent'], ['Cabin', 'cabin', 'fa-campground'], ['Tiny House', 'tiny house', 'fa-house-house'], ['Container', 'container', 'fa-shipping-box']].each do |label, value, icon_class| %>
       <div class="radio-item">
         <%= f.radio_button :category, value, id: "category_#{value}", class: "hidden-radio" %>
         <label for="category_<%= value %>">

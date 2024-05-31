@@ -4,7 +4,11 @@
       <% accomodations.each do |a| %>
         <div class="card h-100" style="width: 100%">
           <%= link_to accomodation_path(a) do %>
+           <% if a.photos.attached? %>
+            <%= cl_image_tag a.photos.first.key, class: "card-img-top img-custo", alt: a.title %>
+           <% else %>
           <img class="card-img-top img-custo" src="<%= a.images %>" alt="<%= a.title %>">
+           <% end %>
           <% end %>
           <div class="card-body">
             <div class="d-flex flex-row justify-content-between mb-1">
