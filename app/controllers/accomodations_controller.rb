@@ -56,6 +56,7 @@ class AccomodationsController < ApplicationController
   def create
     @accomodation = Accomodation.new(accomodation_params)
     @accomodation.user = current_user
+    @experience = Experience.first
     if @accomodation.save
       redirect_to accomodation_path(@accomodation)
     else

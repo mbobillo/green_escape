@@ -1,4 +1,4 @@
-<div class="page_wrap" data-controller="price-detail" data-price-detail-price-value="<%= @accomodation.price.round %>" data-price-detail-capacity-value="<%= @accomodation.capacity %>" data-price-detail-activity-price-value="<%= @accomodation.experiences.first.price.round %>">
+<div class="page_wrap" data-controller="price-detail" data-price-detail-price-value="<%= @accomodation.price.round %>" data-price-detail-capacity-value="<%= @accomodation.capacity %>" data-price-detail-activity-price-value="<%= Experience.first.price.round %>">
 
   <div class="show_hero_wrap">
   <div class="container-show" style="padding-bottom: 2.5rem">
@@ -99,7 +99,7 @@
                 <div class="price_line_left">
                   <p class="text-weight-medium">Price per activity</p>
                   <div class="logic_price_wrap">
-                    <p><%= @accomodation.experiences.first.price.round %>€</p>
+                    <p><%= Experience.first.price.round %>€</p>
                     <p>x</p>
                     <p> <%= @accomodation.capacity %> </p>
                   </div>
