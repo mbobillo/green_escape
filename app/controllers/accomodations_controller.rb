@@ -4,8 +4,12 @@ class AccomodationsController < ApplicationController
   def index
     @accomodations = Accomodation.all
     @accomodation = Accomodation.new
-    if params[:localisation].present?
+    if params[:localisation].present? && params[:capacity].present?
       @accomodations = @accomodations.where("localisation ILIKE ?", "%#{params[:localisation]}%").and(@accomodations.where("capacity >= ?", params[:capacity]))
+    elsif params[:capacity].present?
+      @accomodations = (@accomodations.where("capacity >= ?", params[:capacity]))
+    else
+      @accomodations = Accomodation.all
     end
     if params[:category].present?
       @accomodations = @accomodations.where(category: params[:category])
