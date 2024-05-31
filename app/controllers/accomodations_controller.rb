@@ -36,9 +36,6 @@ class AccomodationsController < ApplicationController
     @booking = Booking.new
     @experiences = @accomodation.experiences
 
-
-    return if @accomodation.geocoded?
-
     @markers = [
 
       {
