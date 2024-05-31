@@ -30,6 +30,7 @@ class BookingsController < ApplicationController
 
   def decline
     if @booking.update(status: 'declined')
+      session[:alert_kind] = 'decline'
       redirect_to bookings_path, notice: 'Booking was successfully declined.'
     else
       redirect_to bookings_path, alert: 'Failed to decline the booking.'
